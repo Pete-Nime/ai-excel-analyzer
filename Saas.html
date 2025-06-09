@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Excel Analyzer | Areca Tech</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      transition: 0.3s ease;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(13, 110, 253, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0); }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: #0d6efd;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Areca Tech Ltd</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="py-5 text-white text-center" style="background: linear-gradient(135deg, #0d6efd, #6ea8fe);">
+  <div class="container">
+    <h1 class="display-4">Turn Your Excel into Smart Insights</h1>
+    <p class="lead">Upload. Analyze. Understand — powered by AI.</p>
+    <a href="#demo" class="btn btn-light btn-lg mt-3">See Demo</a>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="py-5">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <h3>📊 Automated Charts</h3>
+        <p>Visualize your spreadsheet data in a single click.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>🧠 AI Insights</h3>
+        <p>Understand your data with plain English summaries from GPT-4.</p>
+      </div>
+      <div class="col-md-4">
+        <h3>📈 Predict Trends</h3>
+        <p>Use built-in machine learning to spot future patterns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Demo Section -->
+<section id="demo" class="bg-light py-5">
+  <div class="container text-center">
+    <h2>Try the Demo</h2>
+    <p class="mb-4">Choose a demo experience:</p>
+
+    <ul class="nav nav-tabs justify-content-center mb-4" id="demoTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="sse-tab" data-bs-toggle="tab" data-bs-target="#sse" type="button" role="tab">SSE Solution</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="maintainx-tab" data-bs-toggle="tab" data-bs-target="#maintainx" type="button" role="tab">Maintainx Demo</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="custom-tab" data-bs-toggle="tab" data-bs-target="#custom" type="button" role="tab">Custom Design</button>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="demoTabsContent">
+      <!-- SSE Demo -->
+      <div class="tab-pane fade show active" id="sse" role="tabpanel">
+        <p>Upload your Excel file to auto-generate insights.</p>
+        <input type="file" class="form-control w-50 mx-auto mb-3">
+        <a href="#" class="btn btn-primary">Launch SSE Demo</a>
+      </div>
+
+      <!-- Maintainx Demo -->
+      <div class="tab-pane fade" id="maintainx" role="tabpanel">
+        <p>Upload your maintenance schedule or task sheet.</p>
+        <input type="file" class="form-control w-50 mx-auto mb-3">
+        <a href="#" class="btn btn-success">Launch Maintainx Demo</a>
+      </div>
+
+      <!-- Custom Design -->
+      <div class="tab-pane fade" id="custom" role="tabpanel">
+        <p>Describe your custom AI project idea.</p>
+        <textarea class="form-control w-75 mx-auto mb-3" rows="3" placeholder="Tell us what you need..."></textarea>
+        <a href="https://fiverr.com" class="btn btn-warning">Request Custom Design</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Pricing Plans</h2>
+    <div class="row text-center">
+      <div class="col-md-3">
+        <div class="card border-primary pulse">
+          <div class="card-body">
+            <h4 class="card-title">Free</h4>
+            <p class="card-text">3 uploads/month</p>
+            <h5>$0</h5>
+            <a href="#" class="btn btn-outline-primary btn-sm mt-2">Register</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card border-success">
+          <div class="card-body">
+            <h4 class="card-title">Starter</h4>
+            <p class="card-text">30 uploads/month</p>
+            <h5>$15/mo</h5>
+            <a href="#" class="btn btn-outline-success btn-sm mt-2">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card border-warning">
+          <div class="card-body">
+            <h4 class="card-title">Pro</h4>
+            <p class="card-text">Unlimited uploads + predictions</p>
+            <h5>$39/mo</h5>
+            <a href="#" class="btn btn-outline-warning btn-sm mt-2">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card border-dark">
+          <div class="card-body">
+            <h4 class="card-title">Team</h4>
+            <p class="card-text">Multi-user & API access</p>
+            <h5>Custom</h5>
+            <a href="#" class="btn btn-outline-dark btn-sm mt-2">Contact Sales</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="bg-dark text-white py-4">
+  <div class="container text-center">
+    <h4>Ready to Start?</h4>
+    <p>Contact us at <a href="mailto:nimepeter77@gmail.com" class="text-info">nimepeter77@gmail.com</a></p>
+    <p>Or book a free consult on <a href="https://fiverr.com" class="text-info">Fiverr</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-secondary text-white text-center py-2">
+  <small>&copy; 2025 Areca Tech Ltd. All rights reserved.</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
