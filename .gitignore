@@ -1,2 +1,45 @@
-# macOS system file to ignore
+# 🔹 Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.log
+
+# 🔹 Jupyter/Notebook/Checkpoint files
+.ipynb_checkpoints/
+
+# 🔹 Conda environment
+.env/
+.venv/
+env/
+venv/
+pip-wheel-metadata/
+
+# 🔹 VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# 🔹 Streamlit cloud secrets (should not be tracked!)
+.streamlit/secrets.toml
+
+# 🔹 Local dev settings
+.env
+*.local
 .DS_Store
+
+# 🔹 OS/Metadata
+Thumbs.db
+desktop.ini
+
+# 🔹 Compiled or cache files
+*.pyc
+*.swp
+*.bak
+*.tmp
+*.temp
+
+# 🔹 Git metadata (don't touch)
+.git/
