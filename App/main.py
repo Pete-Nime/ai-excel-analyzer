@@ -2,23 +2,23 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import openai 
+from openai import OpenAI
 import os
 
-# Set page layout
+# Set up Streamlit page
 st.set_page_config(page_title="AI Excel Analyzer", layout="wide")
 st.title("📊 Excel Analyzer with GPT-4o")
 
-# Load API key from environment variable
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Set OpenAI client
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-# Sample dataset link
+# Sample dataset download (optional link)
 st.markdown("📥 [Download Sample Dataset](https://ai-excel-analyzer.streamlit.app/sample_sales_data.csv)")
 
 # File uploader
 uploaded_file = st.file_uploader("Upload your Excel or CSV file", type=["csv", "xlsx"])
 
-# Function to generate AI insights
+# GPT-4o Analysis Function
 def generate_ai_insight(df):
     prompt = f"""
 You are a data analyst AI. Analyze this dataset and return:
@@ -35,17 +35,17 @@ Data Types:
 Summary Stats:
 {df.describe(include='all').to_string()}
 """
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-4o",
         messages=[
-            {"role": "system", "content": "You are a helpful AI data analyst."},
+            {"role": "system", "content": "You are a helpful data analyst."},
             {"role": "user", "content": prompt}
         ],
         temperature=0.4
     )
-    return response['choices'][0]['message']['content']
+    return response.choices[0].message.content
 
-# Process uploaded file
+# Main app logic
 if uploaded_file:
     try:
         df = pd.read_excel(uploaded_file) if uploaded_file.name.endswith(".xlsx") else pd.read_csv(uploaded_file)
@@ -87,4 +87,4 @@ if uploaded_file:
         st.success("✅ Analysis Complete!")
 
     except Exception as e:
-        st.error(f"❌ Error processing your file: {e}")
+        st.error(f"❌ Error processing your file:\n\n{e}")
